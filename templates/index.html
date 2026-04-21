@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron-custom text-center mb-5">
+    <h1 class="display-4">Bienvenidos a Nuestra Empresa</h1>
+    <p class="lead">Ofrecemos soluciones integrales para tus necesidades profesionales.</p>
+    <hr class="my-4 border-light">
+    <p>¿Tienes un proyecto en mente? Estamos listos para ayudarte.</p>
+    
+    <a class="btn btn-primary btn-lg" href="{{ url_for('contacto') }}" role="button">Contáctanos ahora</a>
+</div>
+
+<div class="row">
+    {% for s in servicios %}
+    <div class="col-md-4 mb-4 ">
+        <div class="card h-100 shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title fw-bold ">{{ s.nombre }}</h5>
+                <p class="card-text">{{ s.desc }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
